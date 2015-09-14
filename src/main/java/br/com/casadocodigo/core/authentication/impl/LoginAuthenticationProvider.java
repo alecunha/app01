@@ -1,10 +1,14 @@
 package br.com.casadocodigo.core.authentication.impl;
 
+import org.springframework.security.authentication.AuthenticationServiceException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
+
+import br.com.casadocodigo.core.entinty.User;
+
 
 @Component
 public class LoginAuthenticationProvider extends AbstractUserDetailsAuthenticationProvider {
@@ -15,11 +19,16 @@ public class LoginAuthenticationProvider extends AbstractUserDetailsAuthenticati
 	}
 
 	@Override
-	protected UserDetails retrieveUser(String arg0, UsernamePasswordAuthenticationToken arg1) throws AuthenticationException {
+	protected UserDetails retrieveUser(String username, UsernamePasswordAuthenticationToken authentication) throws AuthenticationException {
 
-		UserDetails user = null;
+		User user = new User();
+		if (authentication.getCredentials().toString().equals("123") || username.equals("admin")) {
+			user.setUsername("admin");
+			user.setPassword("123");
+			return user;
+		}
 		
-		return user;
+		throw new AuthenticationServiceException("Login/Senha inválidos");
 	}
 
 }

@@ -6,17 +6,26 @@
            http://www.springframework.org/schema/security
            http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
-	<http auto-config="true" use-expressions="true" access-denied-page="/web/403">
-		<intercept-url pattern="/rest/**" access="permitAll" />
+	<http auto-config="true" use-expressions="true" >
+		
+		
 		<intercept-url pattern="/resources/**" access="permitAll" />
-		<intercept-url pattern="/web/login*" access="permitAll" />
+		<intercept-url pattern="/web/login*" access="isAnonymous()" />
 		<intercept-url pattern="/web/**" access="isFullyAuthenticated()" />	
-		<form-login login-page="/web/login" default-target-url="/web/"
-			authentication-failure-url="/web/loginfailed" />
+		
+		<form-login 
+			login-page="/web/login" 
+			login-processing-url="/web/j_spring_security_check"
+			default-target-url="/web/"
+			authentication-failure-url="/web/loginfailed"
+			always-use-default-target="true" 
+		/>
+		
 		<logout logout-success-url="/web/" />
 	</http>
 	<authentication-manager alias="authenticationManager">
     	<authentication-provider ref="loginAuthenticationProvider"/>
 	</authentication-manager>
-   
+	
+    
 </beans:beans>
