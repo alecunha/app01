@@ -184,5 +184,6 @@
 			</configuration>
 		</plugin>
 	  </plugins>
+	  <finalName>app01</finalName>
   </build>
 </project>
