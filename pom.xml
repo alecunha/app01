@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>livro-entrega-continia</groupId>
   <artifactId>app01</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>war</packaging>
   <name>app01</name>
   <description>Aplicação de demostração utilizada nos exemplos do livro.</description>
@@ -184,5 +184,6 @@
 			</configuration>
 		</plugin>
 	  </plugins>
+	  <finalName>app01</finalName>
   </build>
 </project>
