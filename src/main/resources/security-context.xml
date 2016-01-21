@@ -21,7 +21,7 @@
 			always-use-default-target="true" 
 		/>
 		
-		<logout logout-success-url="/web/" />
+		<logout logout-url="/web/logout" logout-success-url="/web/" />
 	</http>
 	<authentication-manager alias="authenticationManager">
     	<authentication-provider ref="loginAuthenticationProvider"/>
