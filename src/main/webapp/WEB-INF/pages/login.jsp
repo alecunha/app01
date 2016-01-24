@@ -13,12 +13,12 @@
 	<h2 class="form-signin-heading">Login</h2>
 	
 	<p>
-	<input type="text" name="j_username" class="form-control" placeholder="Usuário" autofocus /> 
+	<input id="usuario" type="text" name="j_username" class="form-control" placeholder="Usuário" autofocus /> 
 	</p>
 	<p>	
-	<input type="password" name="j_password" class="form-control" placeholder="Senha" />
+	<input id="senha" type="password" name="j_password" class="form-control" placeholder="Senha" />
 	</p> 
 	<p>
-	<button class="btn btn-lg btn-primary" type="submit">Sign in</button>
+	<button id="entrar" class="btn btn-lg btn-primary" type="submit">Entrar</button>
 	</p>
 </form>

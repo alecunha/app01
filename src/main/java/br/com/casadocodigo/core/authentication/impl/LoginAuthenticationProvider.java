@@ -22,7 +22,7 @@ public class LoginAuthenticationProvider extends AbstractUserDetailsAuthenticati
 	protected UserDetails retrieveUser(String username, UsernamePasswordAuthenticationToken authentication) throws AuthenticationException {
 
 		User user = new User();
-		if (authentication.getCredentials().toString().equals("123") || username.equals("admin")) {
+		if (authentication.getCredentials().toString().equals("123") && username.equals("admin")) {
 			user.setUsername("admin");
 			user.setPassword("123");
 			return user;
