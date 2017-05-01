@@ -19,7 +19,7 @@ public class LoginPage {
 	@Before
 	public void setUpTest() {
 		driver = new FirefoxDriver();
-		driver.get("http://localhost:8081/app01/web");
+		driver.get("http://10.3.1.101:8080/app01/web");
 	}
 
 
